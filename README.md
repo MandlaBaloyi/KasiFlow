@@ -1,23 +1,35 @@
 <p align="center">
-  <img src="frontend/mobile/assets/images/icon.png" alt="Akayza" width="96" />
+  <img src="docs/img/banner.svg" alt="Akayza: keep it in the kasi. One free app that runs an informal business and connects it to its suppliers." width="100%">
 </p>
 
-<h1 align="center">Akayza</h1>
-
-<p align="center"><em>Keep it in the kasi.</em></p>
-
 <p align="center">
-  One free app that runs an informal business, connects it to the suppliers it already buys from,<br/>
-  and builds a record the owner holds: the first step to finance tomorrow.
+  <img alt="backend" src="https://img.shields.io/badge/backend-Flask%20%2B%20PostgreSQL%2016-0F172A?logo=flask&logoColor=white">
+  <img alt="mobile" src="https://img.shields.io/badge/mobile-Expo%20%2B%20React%20Native-059669?logo=expo&logoColor=white">
+  <img alt="tests" src="https://img.shields.io/badge/tests-1%2C281%20backend%20%C2%B7%20214%20app-brightgreen">
+  <img alt="readiness" src="https://img.shields.io/badge/readiness-TRL%204-F59E0B">
+  <img alt="licence" src="https://img.shields.io/badge/licence-all%20rights%20reserved-lightgrey">
 </p>
 
 <p align="center">
   <a href="docs/submission/05_final_submission/Akayza_Demo_TeamPR.mp4"><b>▶ Watch the 81-second demo</b></a> ·
-  <a href="docs/SETUP.md">Run it yourself</a> ·
-  <a href="#security-and-privacy">Security and privacy</a>
+  <a href="#the-problem">Problem</a> ·
+  <a href="#whats-built">What is built</a> ·
+  <a href="#how-it-works">How it works</a> ·
+  <a href="#security-and-privacy">Security and privacy</a> ·
+  <a href="docs/SETUP.md">Run it yourself</a>
 </p>
 
 <p align="center"><sub>Team PR · GKHack26 (Geekulcha Annual Hackathon 2026) · South Africa</sub></p>
+
+<table align="center">
+  <tr>
+    <td align="center"><b>1 281</b><br>backend tests</td>
+    <td align="center"><b>214</b><br>app tests</td>
+    <td align="center"><b>1 672</b><br>products across<br>11 sample suppliers</td>
+    <td align="center"><b>81 s</b><br>demo video</td>
+    <td align="center"><b>TRL 4</b><br>end to end,<br>PayFast sandbox</td>
+  </tr>
+</table>
 
 ---
 
@@ -66,14 +78,19 @@ Everything below works end to end against our real backend, with payments in Pay
 
 ## How it works
 
-```
- Mobile app (React Native + Expo)      ── HTTPS ──▶  API (Python + Flask)  ──▶  PostgreSQL 16
- Android first, secure storage,                       one module per area:       one schema per area,
- offline queue for orders and credit                  identity · business tools   versioned migrations,
-                                                      suppliers · commerce ·      append-only audit trail
-                                                      proof · platform
-                                                            │
-                                   PayFast (payments) · Cloudinary (photos) · Mapbox (addresses) · email
+```mermaid
+flowchart LR
+    M["Mobile app<br/>React Native + Expo<br/>secure storage, offline queue"] -->|HTTPS| API
+    subgraph API["API: Python + Flask, one module per area"]
+        I["identity"]
+        B["business tools"]
+        S["suppliers"]
+        C["commerce"]
+        R["proof"]
+        P["platform"]
+    end
+    API --> DB[("PostgreSQL 16<br/>one schema per area<br/>versioned migrations<br/>append-only audit trail")]
+    API --> X["PayFast, Cloudinary,<br/>Mapbox, email"]
 ```
 
 - **The server prices everything.** The phone only says which products and how many.
@@ -116,7 +133,7 @@ docs/              setup, design, plans and hackathon submission
 
 ## Team PR
 
-- **Mandla** ([@Mandla78](https://github.com/Mandla78)): team lead; product, backend, payments and the supplier engine
+- **Mandla** ([@MandlaBaloyi](https://github.com/MandlaBaloyi)): team lead; product, backend, payments and the supplier engine
 - **Risuna** ([@RinsunaMahani](https://github.com/RinsunaMahani)): business tools (credit book, order book, jobs), notifications, sealed records
 
 ## Credits and licence

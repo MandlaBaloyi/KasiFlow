@@ -3,7 +3,7 @@ User -- one person's Akayza account. OWNED BY accounts: auth/ and
 devices/ read it through accounts' services and never write it directly.
 
 The email is stored lower-cased and trimmed (the unique index is on that
-form), so "Nomsa@Gmail.com " and "nomsa@gmail.com" are the same account.
+form), so "Nomsa@Example.com " and "nomsa@example.com" are the same account.
 """
 from __future__ import annotations
 

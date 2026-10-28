@@ -15,8 +15,8 @@ import { colors, fonts, radius } from '@/shared/theme/tokens';
  * gets name, email and photo, never the password.
  */
 const accounts = [
-  { name: 'Nomsa Dlamini', email: 'nomsa.spaza@gmail.com', tint: colors.ink },
-  { name: 'Nomsa D', email: 'ndlamini.work@gmail.com', tint: '#6B6456' },
+  { name: 'Nomsa Dlamini', email: 'nomsa.spaza@example.com', tint: colors.ink },
+  { name: 'Nomsa D', email: 'nomsa.d@example.com', tint: '#6B6456' },
 ];
 
 export default function GooglePicker() {

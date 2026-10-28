@@ -56,7 +56,7 @@ To debug a feature, open its folder: `src/features/dashboard/informal-business/c
 Auth is mocked: nothing leaves the phone. Mock rules:
 
 - Any 6-digit code verifies, except `000000`, which shows the error state.
-- In the Google sheet, `ndlamini.work@gmail.com` counts as already registered, so it shows the link-Google screen.
+- In the Google sheet, `nomsa.d@example.com` counts as already registered, so it shows the link-Google screen.
 - Sign-in works with any email and an 8+ character password.
 
 ## Money

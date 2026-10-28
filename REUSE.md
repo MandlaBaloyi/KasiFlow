@@ -1,6 +1,6 @@
 # Reused code
 
-Akayza is built for GKHack26. Its general-purpose infrastructure comes from our own earlier project, **TruConnect** (github.com/Mandla78/TRU-Connect, same author). Everything specific to Akayza is new: the domains and features, screens, flows, the record/ledger and the cash handshake.
+Akayza is built for GKHack26. Its general-purpose infrastructure comes from our own earlier project, **TruConnect** (github.com/MandlaBaloyi/TRU-Connect, same author). Everything specific to Akayza is new: the domains and features, screens, flows, the record/ledger and the cash handshake.
 
 The reused code was adapted: the product name was replaced, and imports of TruConnect-only domains were removed. Where a reused file keeps an explanation of a past decision, that history is TruConnect's.
 
